@@ -10,3 +10,11 @@ RabbitMQ คือ Message Broker ตัวกลางในการรับ�
 1. Producer
 2. Consumer
 3. Queue or Topic
+
+### ประเภทของ Exchange 
+
+1. Direct Exchange
+2. Fanout Exchange
+3. Topic Exchange
+4. Headers Exchange
+5. Default(Nameless)
