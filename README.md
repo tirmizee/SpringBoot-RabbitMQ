@@ -4,7 +4,7 @@
 
 RabbitMQ คือ Message Broker ตัวกลางในการรับส่งข้อความที่มีอัตราการส่งข้อมูลระดับสูง
 
-![exchanges-bidings-routing-keys](https://user-images.githubusercontent.com/15135199/81209714-16c82480-8ffb-11ea-9500-56fa68b039c6.png)
+<span style="display:block;text-align:center">![exchanges-bidings-routing-keys](https://user-images.githubusercontent.com/15135199/81209714-16c82480-8ffb-11ea-9500-56fa68b039c6.png)
 
 
 ### ในระบบการส่งข้อความใด ๆ มีองค์ประกอบที่เกี่ยวข้อง 3 ประการ ได้แก่
