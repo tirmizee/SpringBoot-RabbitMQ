@@ -7,7 +7,7 @@ RabbitMQ คือ Message Broker ตัวกลางในการรับ�
 
 
 <p align="center">
-  <img width="460" height="300" src="https://user-images.githubusercontent.com/15135199/81209714-16c82480-8ffb-11ea-9500-56fa68b039c6.png">
+  <img  src="https://user-images.githubusercontent.com/15135199/81209714-16c82480-8ffb-11ea-9500-56fa68b039c6.png">
 </p>
 
 
