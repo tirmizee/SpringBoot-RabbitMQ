@@ -7,46 +7,40 @@ import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.tirmizee.config.properties.RabbitMQProperty;
 
 @Configuration
-public class RabbitMQConfig {
+public class RabbitMQDirectConfig {
 
 	@Autowired
 	private RabbitMQProperty mqProperty;
 	
 	@Bean
-	public Queue queue() {
-		return new Queue(mqProperty.getQueueName(), false);
+	public Queue queueRed() {
+		return new Queue(mqProperty.getQueueRed(), false);
 	}
 	
 	@Bean
-	public Queue queue1() {
-		return new Queue("log", false);
+	public Queue queueGreen() {
+		return new Queue(mqProperty.getQueueGreen(), false);
 	}
-	
-//	@Bean
-//    TopicExchange exchange() {
-//		 return new TopicExchange(mqProperty.getExchangeName());
-//    }
 	
 	@Bean
 	public DirectExchange exchange() {
-        return new DirectExchange(mqProperty.getExchangeName());
+        return new DirectExchange(mqProperty.getDirectName());
     }
 	
 	@Bean
-	public Binding binding1(DirectExchange exchange) {
-		return BindingBuilder.bind(queue()).to(exchange).with(queue().getName());
+	public Binding binding1(DirectExchange directExchange, Queue queueRed) {
+		return BindingBuilder.bind(queueRed).to(directExchange).withQueueName();
 	}
 	
 	@Bean
-	public Binding binding2(DirectExchange exchange) {
-		return BindingBuilder.bind(queue1()).to(exchange).with("logkey");
+	public Binding binding2(DirectExchange directExchange, Queue queueGreen) {
+		return BindingBuilder.bind(queueGreen).to(directExchange).withQueueName();
 	}
 	
 	@Bean

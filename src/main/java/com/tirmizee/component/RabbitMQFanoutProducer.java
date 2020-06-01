@@ -7,16 +7,16 @@ import org.springframework.stereotype.Component;
 import com.tirmizee.config.properties.RabbitMQProperty;
 
 @Component
-public class RabbitMQProducer {
-	
+public class RabbitMQFanoutProducer {
+
 	@Autowired
 	private RabbitMQProperty mqProperty;
 	
 	@Autowired
     private RabbitTemplate rabbitTemplate;
 	
-	public void produceMsg(String msg){
-		rabbitTemplate.convertAndSend(mqProperty.getExchangeName(), mqProperty.getRoutingKey(), msg);
+	public void produceMsgToFanout(String msg){
+		rabbitTemplate.convertAndSend(mqProperty.getFanoutName(), null, msg);
 	}
-
+	
 }

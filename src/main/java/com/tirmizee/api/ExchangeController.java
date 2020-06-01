@@ -6,20 +6,49 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tirmizee.component.RabbitMQProducer;
+import com.tirmizee.component.RabbitMQDefualtProducer;
+import com.tirmizee.component.RabbitMQDirectProducer;
+import com.tirmizee.component.RabbitMQFanoutProducer;
+import com.tirmizee.component.RabbitMQHeaderProducer;
 
 @RestController
 @RequestMapping(path = "/exchange")
 public class ExchangeController {
 
 	@Autowired
-	private RabbitMQProducer rabbitMQProducer;
+	private RabbitMQDirectProducer rabbitMQProducer;
 	
-	@GetMapping(path = "/{msg}")
-	public String hello(@PathVariable String msg) {
-		rabbitMQProducer.produceMsg(msg);
+	@Autowired
+	private RabbitMQFanoutProducer rabbitMQFanoutProducer;
+	
+	@Autowired
+	private RabbitMQDefualtProducer rabbitMQDefualtProducer;
+	
+	@Autowired
+	private RabbitMQHeaderProducer RabbitMQHeaderProducer;
+	
+	@GetMapping(path = "/direct/{msg}")
+	public String directHello(@PathVariable String msg) {
+		rabbitMQProducer.produceMsgToRed(msg);
 		return "success";
 	}
 	
+	@GetMapping(path = "/fanout/{msg}")
+	public String fanoutHello(@PathVariable String msg) {
+		rabbitMQFanoutProducer.produceMsgToFanout(msg);
+		return "success";
+	}
+	
+	@GetMapping(path = "/defualt/{msg}")
+	public String defualtHello(@PathVariable String msg) {
+		rabbitMQDefualtProducer.produceMsgToDefualt(msg);
+		return "success";
+	}
+	
+	@GetMapping(path = "/header/{msg}/{department}")
+	public String defualtHello(@PathVariable String msg, @PathVariable String department) {
+		RabbitMQHeaderProducer.produceMsgToHeader(msg, department);
+		return "success";
+	}
 	
 }
