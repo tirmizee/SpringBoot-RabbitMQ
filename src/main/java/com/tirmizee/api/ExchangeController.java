@@ -35,7 +35,7 @@ public class ExchangeController {
 	public String directHello(@PathVariable String msg) {
 		rabbitMQProducer.produceMsgToRed(msg);
 		return "success";
-	}
+	} 
 	
 	@GetMapping(path = "/fanout/{msg}")
 	public String fanoutHello(@PathVariable String msg) {
