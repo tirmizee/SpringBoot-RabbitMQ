@@ -24,3 +24,8 @@ RabbitMQ คือ Message Broker ตัวกลางในการรับ�
 3. Topic Exchange
 4. Headers Exchange
 5. Default(Nameless)
+
+### Durability
+
+1. durable
+2. Transient
