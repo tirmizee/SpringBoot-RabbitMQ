@@ -45,7 +45,6 @@ public class RabbitMQDirectConsumer {
 		} catch (IOException ex) {
 			ex.printStackTrace();
 		}
-       
     }
 	
 	@RabbitListener(queues="${rabbitmq.queue-red}")
@@ -65,7 +64,6 @@ public class RabbitMQDirectConsumer {
 		} catch (IOException ex) {
 			ex.printStackTrace();
 		}
-       
     }
 	 
 	@RabbitListener(queues="${rabbitmq.queue-green}")

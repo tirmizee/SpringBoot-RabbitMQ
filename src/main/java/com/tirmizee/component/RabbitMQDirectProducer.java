@@ -16,7 +16,9 @@ public class RabbitMQDirectProducer {
     private RabbitTemplate rabbitTemplate;
 	
 	public void produceMsgToRed(String msg){
-		rabbitTemplate.convertAndSend(mqProperty.getDirectName(), mqProperty.getQueueRed(), msg);
+		for (int i = 0; i < 100000; i++) {
+			rabbitTemplate.convertAndSend(mqProperty.getDirectName(), mqProperty.getQueueRed(), msg);
+		}
 	}
 
 }
