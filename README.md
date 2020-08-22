@@ -1,10 +1,20 @@
 # SpringBoot-RabbitMQ
 
+### AMQP(Advanced Message Queuing Protocol)
+
+AMQP เป็นโปรโตคอลที่ใช้ในการรับส่งข้อความระหว่างแอพพลิเคชันที่มีน้ำหนักเบา คุณสมบัติที่กำหนดของ AMQP คือ การจัดคิวของข้อความ(queuing) การกำหนดเส้นทาง(routing) แบบจุดต่อจุด(point-to-point) หรือแบบแพร่กระจาย (publish-and-subscribe) ที่มีความน่าเชื่อถือและปลอดภัย
+
+#### AMQP Priority
+
+โปรโตคอล AMQP รองรับลำดับความสำคัญของ Queue สูงสุด 10 ระดับโดยเริ่มต้นที่ 0 มีลำดับความสำคัญต่ำสุดและ 9 มีลำดับความสำคัญสูงสุด ลำดับความสำคัญของข้อความถูกกำหนดโดย  publisher/producer โดยใช้ header ในการระบุ
+
 ### RabbitMQ คืออะไร
 
-RabbitMQ คือ Message Broker ตัวกลางในการรับส่งข้อความที่มีอัตราการส่งข้อมูลระดับสูง
+RabbitMQ คือ Message Broker ตัวกลางในการรับส่งข้อความที่มีอัตราการส่งข้อมูลระดับสูง ที่ใช้ AMQP
 
+#### RabbitMQ Priority
 
+RabbitMQ รองรับลำดับความสำคัญที่ 0 ถึง 255 แนะนำให้ใช้ค่าระหว่าง 1 ถึง 10
 
 <p align="center">
   <img  src="https://user-images.githubusercontent.com/15135199/81209714-16c82480-8ffb-11ea-9500-56fa68b039c6.png">
