@@ -29,7 +29,7 @@ public class RabbitMQDirectConfig {
 	}
 	
 	@Bean
-	public DirectExchange exchange() {
+	public DirectExchange directExchange() {
         return new DirectExchange(mqProperty.getDirectName());
     }
 	

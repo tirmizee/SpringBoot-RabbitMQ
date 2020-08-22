@@ -11,11 +11,15 @@ import com.tirmizee.component.RabbitMQDelayProvider;
 import com.tirmizee.component.RabbitMQDirectProducer;
 import com.tirmizee.component.RabbitMQFanoutProducer;
 import com.tirmizee.component.RabbitMQHeaderProducer;
+import com.tirmizee.component.RabbitMQPriorityProducer;
 
 @RestController
 @RequestMapping(path = "/exchange")
 public class ExchangeController {
 
+	@Autowired
+	private RabbitMQPriorityProducer rabbitMQPriorityProducer;
+	
 	@Autowired
 	private RabbitMQDelayProvider rabbitMQDelayProvider;
 	
@@ -58,6 +62,15 @@ public class ExchangeController {
 	@GetMapping(path = "/delay/{msg}")
 	public String delayed(@PathVariable String msg) {
 		rabbitMQDelayProvider.sendDelay(msg, 5000);
+		return "success";
+	}
+	
+	@GetMapping(path = "/priority/{msg}")
+	public String priority(@PathVariable String msg) {
+		for (int i = 1; i < 20; i++) {
+			rabbitMQPriorityProducer.produceMsgToRed(msg, i%9+1);
+		}
+			
 		return "success";
 	}
 	
