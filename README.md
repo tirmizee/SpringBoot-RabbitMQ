@@ -38,5 +38,10 @@ RabbitMQ รองรับลำดับความสำคัญที่ 1
 
 ### Durability
 
-1. durable
-2. Transient
+#### 1. durable
+
+เก็บข้อมูลหว้ใน disk
+
+#### 2. Transient
+
+เก็บข้อมูลหว้ใน ram ข้อมูลจะหายเมื่อมีการ restart server
