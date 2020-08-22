@@ -12,14 +12,14 @@ AMQP เป็นโปรโตคอลที่ใช้ในการรั
 
 RabbitMQ คือ Message Broker ตัวกลางในการรับส่งข้อความที่มีอัตราการส่งข้อมูลระดับสูง ที่ใช้ AMQP
 
+<p align="center">
+  <img  src="https://www.rabbitmq.com/img/tutorials/intro/hello-world-example-routing.png">
+</p>
+
 #### RabbitMQ Priority
 
 RabbitMQ รองรับลำดับความสำคัญที่ 1 ถึง 255 แนะนำให้ใช้ค่าระหว่าง 1 ถึง 10 Priority มีมาให้ตั้งแต่ version 3.5 ขึ้นไปหากใช้ version ที่ต่ำกว่าจะต้องติดตั้ง plugin rabbitmq-priority-queue
 เพิ่ม (https://github.com/rabbitmq/rabbitmq-priority-queue)
-
-<p align="center">
-  <img  src="https://user-images.githubusercontent.com/15135199/81209714-16c82480-8ffb-11ea-9500-56fa68b039c6.png">
-</p>
 
 
 ### ในระบบการส่งข้อความใด ๆ มีองค์ประกอบที่เกี่ยวข้อง 3 ประการ ได้แก่
