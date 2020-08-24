@@ -10,7 +10,7 @@ AMQP เป็นโปรโตคอลที่ใช้ในการรั
 
 ### RabbitMQ คืออะไร
 
-RabbitMQ คือ Message Broker ตัวกลางในการรับส่งข้อความที่มีอัตราการส่งข้อมูลระดับสูง ที่ใช้ AMQP
+RabbitMQ คือ Message Broker ตัวกลางในการรับส่งข้อความที่มีอัตราการส่งข้อมูลระดับสูง ที่ใช้โปรโตคอล AMQP
 
 <p align="center">
   <img  src="https://www.rabbitmq.com/img/tutorials/intro/hello-world-example-routing.png">
