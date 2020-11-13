@@ -23,9 +23,9 @@ RabbitMQ รองรับลำดับความสำคัญที่ 1
 
 ### ประเภทของ Exchange 
 
-1. Direct Exchange
-2. Fanout Exchange
-3. Topic Exchange
+1. <b>Direct Exchange : </b> จะส่ง message ไปยัง Queue โดยตรงด้วย message routing key.
+2. <b>Fanout Exchange : </b> จะส่ง message กระจายไปทุก Queue ที่เชื่อมโยงอยู่กัน exchange.
+3. <b>Topic Exchange : </b> จะส่ง message ไปยัง Queue โดยขึ้นอยู่กับ matching ระหว่าง message routing key และ pattern ที่เชื่อมโยง Queue กับ Exchange.
 4. Headers Exchange
 5. Default(Nameless)
 
